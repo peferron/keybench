@@ -1,0 +1,14 @@
+[
+    {
+        "modifiers": [],
+        "characters": "²&é\"'(-è_çà)=azertyuiop^$qsdfghjklmù*<wxcvbn,;:!"
+    },
+    {
+        "modifiers": ["shift"],
+        "characters": "1234567890°+AZERTYUIOP¨£QSDFGHJKLM%μ>WXCVBN?./§"
+    },
+    {
+        "modifiers": ["altgr"],
+        "characters": "~#{[|`\\^@]}¤"
+    }
+]

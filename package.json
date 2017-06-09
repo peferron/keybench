@@ -2,9 +2,10 @@
   "name": "keybench",
   "version": "1.0.0",
   "description": "Compare the keystroke efficiency of various keyboard layouts for writing code.",
-  "main": "index.js",
+  "main": "lib/keybench.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node tests/test_layout.ts",
+    "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
     "url": "https://github.com/peferron/keybench/issues"
   },
   "homepage": "https://github.com/peferron/keybench#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^7.0.29",
+    "ts-node": "^3.0.6",
+    "typescript": "^2.3.4"
+  }
 }

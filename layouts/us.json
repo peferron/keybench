@@ -1,0 +1,10 @@
+[
+    {
+        "modifiers": [],
+        "characters": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./"
+    },
+    {
+        "modifiers": ["shift"],
+        "characters": "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?"
+    }
+]
