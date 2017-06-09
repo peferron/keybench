@@ -6,7 +6,7 @@ import parseLayout from '../src/layout';
 const json = fs.readFileSync('tests/inputs/layout.json', 'utf8');
 const layout = parseLayout(json);
 
-// Test symbols that are missing from the layout.
+// Test characters that are missing from the layout.
 assert.strictEqual(layout.get('µ'), undefined);
 
 // Test modifiers.
