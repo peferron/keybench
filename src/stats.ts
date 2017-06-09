@@ -7,14 +7,14 @@ export interface Stats {
 
 export default function crunch(
     layout: Map<string, CharacterInfo>,
-    counts: Map<string, number>
+    charCounts: Map<string, number>
 ): Stats {
-    const stats = {
+    const stats: Stats = {
         characters: 0,
         keystrokes: 0,
     };
 
-    for (const [char, count] of counts) {
+    for (const [char, count] of charCounts) {
         const info = layout.get(char);
 
         if (!info) {

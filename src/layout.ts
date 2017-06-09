@@ -9,10 +9,10 @@ interface LayoutEntry extends CharacterInfo {
 }
 
 export default function parse(json: string): Map<string, CharacterInfo> {
-    const layout: LayoutEntry[] = JSON.parse(json);
+    const entries: LayoutEntry[] = JSON.parse(json);
     const map: Map<string, CharacterInfo> = new Map();
 
-    for (const {characters, ...info} of layout) {
+    for (const {characters, ...info} of entries) {
         for (const char of characters) {
             if (map.has(char)) {
                 throw new Error(`Character "${char}" should be present only once per layout, but ` +

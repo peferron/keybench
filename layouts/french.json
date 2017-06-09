@@ -1,14 +1,22 @@
 [
     {
         "modifiers": [],
-        "characters": "²&é\"'(-è_çà)=azertyuiop^$qsdfghjklmù*<wxcvbn,;:! \n\t"
+        "characters": "²&é\"'(-è_çà)=azertyuiop$qsdfghjklmù*<wxcvbn,;:! \n\t"
+    },
+    {
+        "modifiers": ["deadkey"],
+        "characters": "^"
     },
     {
         "modifiers": ["shift"],
-        "characters": "1234567890°+AZERTYUIOP¨£QSDFGHJKLM%μ>WXCVBN?./§"
+        "characters": "1234567890°+AZERTYUIOP£QSDFGHJKLM%μ>WXCVBN?./§"
     },
     {
         "modifiers": ["altgr"],
-        "characters": "~#{[|`\\^@]}¤"
+        "characters": "#{[|\\@]}¤"
+    },
+    {
+        "modifiers": ["altgr", "deadkey"],
+        "characters": "~`¨"
     }
 ]
