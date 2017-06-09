@@ -1,7 +1,7 @@
 [
     {
         "modifiers": [],
-        "characters": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./"
+        "characters": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
     },
     {
         "modifiers": ["shift"],

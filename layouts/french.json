@@ -1,7 +1,7 @@
 [
     {
         "modifiers": [],
-        "characters": "²&é\"'(-è_çà)=azertyuiop^$qsdfghjklmù*<wxcvbn,;:!"
+        "characters": "²&é\"'(-è_çà)=azertyuiop^$qsdfghjklmù*<wxcvbn,;:! \n\t"
     },
     {
         "modifiers": ["shift"],

@@ -1,6 +1,6 @@
 import {inspect} from 'util';
 
-interface CharacterInfo {
+export interface CharacterInfo {
     modifiers: string[];
 }
 
