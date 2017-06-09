@@ -4,7 +4,7 @@
   "description": "Compare the keystroke efficiency of various keyboard layouts for writing code.",
   "main": "lib/keybench.js",
   "scripts": {
-    "test": "ts-node tests/test_layout.ts",
+    "test": "find tests -name 'test_*.ts' -print0 | xargs -0 -I{} ts-node {} && echo 'Tests OK.'",
     "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test"
   },
   "repository": {
