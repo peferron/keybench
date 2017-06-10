@@ -1,4 +1,4 @@
-export default async function async(fn: () => void): Promise<void> {
+export default async function rethrow(fn: Function): Promise<void> {
     try {
         await fn();
     } catch (e) {

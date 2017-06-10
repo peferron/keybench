@@ -2,7 +2,7 @@ import * as assert from 'assert';
 
 import {Args} from '../src/args';
 import benchmark from '../src/benchmark';
-import async from './util/async';
+import rethrow from '../src/async';
 
 async function test() {
     const args: Args =  {
@@ -18,4 +18,4 @@ async function test() {
     }]);
 }
 
-async(test);
+rethrow(test);

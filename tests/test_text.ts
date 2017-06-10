@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as assert from 'assert';
 
 import parseStreams from '../src/text';
-import async from './util/async';
+import rethrow from '../src/async';
 
 async function test() {
     const text = await parseStreams(fs.createReadStream('tests/inputs/sample.ts', 'utf8'));
@@ -13,4 +13,4 @@ async function test() {
     assert.strictEqual(text.characterCounts.get('µ'), undefined);
 }
 
-async(test);
+rethrow(test);

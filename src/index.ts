@@ -1,6 +1,11 @@
 import parseArgs from './args';
 import benchmark from './benchmark';
+import rethrow from './async';
 
-const args = parseArgs();
-const stats = benchmark(args);
-console.log(JSON.stringify(stats, null, '  '));
+async function main() {
+    const args = parseArgs();
+    const stats = await benchmark(args);
+    console.log(JSON.stringify(stats, null, '  '));
+}
+
+rethrow(main);
