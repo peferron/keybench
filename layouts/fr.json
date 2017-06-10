@@ -1,0 +1,25 @@
+{
+    "name": "French (AZERTY)",
+    "keys": [
+        {
+            "modifiers": [],
+            "output": "²&é\"'(-è_çà)=azertyuiop$qsdfghjklmù*<wxcvbn,;:! \n\t"
+        },
+        {
+            "modifiers": ["deadkey"],
+            "output": "^"
+        },
+        {
+            "modifiers": ["shift"],
+            "output": "1234567890°+AZERTYUIOP£QSDFGHJKLM%μ>WXCVBN?./§"
+        },
+        {
+            "modifiers": ["altgr"],
+            "output": "#{[|\\@]}¤"
+        },
+        {
+            "modifiers": ["altgr", "deadkey"],
+            "output": "~`¨"
+        }
+    ]
+}

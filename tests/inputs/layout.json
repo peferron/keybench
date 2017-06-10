@@ -1,10 +1,13 @@
-[
-    {
-        "modifiers": [],
-        "characters": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
-    },
-    {
-        "modifiers": ["shift"],
-        "characters": "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?"
-    }
-]
+{
+    "name": "Test layout",
+    "keys": [
+        {
+            "modifiers": [],
+            "output": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
+        },
+        {
+            "modifiers": ["shift"],
+            "output": "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?"
+        }
+    ]
+}

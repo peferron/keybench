@@ -1,27 +1,33 @@
 import {inspect} from 'util';
 
+export interface Layout {
+    name: string;
+    characterInfos: Map<string, CharacterInfo>;
+}
+
 export interface CharacterInfo {
     modifiers: string[];
 }
 
-interface LayoutEntry extends CharacterInfo {
-    characters: string;
+interface LayoutJSON {
+    name: string;
+    keys: {modifiers: string[], output: string}[];
 }
 
-export default function parse(json: string): Map<string, CharacterInfo> {
-    const entries: LayoutEntry[] = JSON.parse(json);
-    const map: Map<string, CharacterInfo> = new Map();
+export default function parse(json: string): Layout {
+    const {name, keys}: LayoutJSON = JSON.parse(json);
+    const infos = new Map<string, CharacterInfo>();
 
-    for (const {characters, ...info} of entries) {
-        for (const char of characters) {
-            if (map.has(char)) {
+    for (const {output, ...info} of keys) {
+        for (const char of output) {
+            if (infos.has(char)) {
                 throw new Error(`Character "${char}" should be present only once per layout, but ` +
-                    `is present both with ${inspect(map.get(char))} and with ${inspect(info)}.`);
+                    `is present with both ${inspect(infos.get(char))} and ${inspect(info)}.`);
             }
 
-            map.set(char, info);
+            infos.set(char, info);
         }
     }
 
-    return map;
+    return {name, characterInfos: infos};
 }

@@ -1,10 +1,13 @@
-[
-    {
-        "modifiers": [],
-        "characters": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
-    },
-    {
-        "modifiers": ["shift"],
-        "characters": "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?"
-    }
-]
+{
+    "name": "United States (ANSI QWERTY)",
+    "keys": [
+        {
+            "modifiers": [],
+            "output": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
+        },
+        {
+            "modifiers": ["shift"],
+            "output": "~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?"
+        }
+    ]
+}
