@@ -1,8 +1,8 @@
 {
   "name": "keybench",
   "version": "1.0.0",
-  "description": "Compare the keystroke efficiency of various keyboard layouts for writing code.",
-  "main": "lib/keybench.js",
+  "description": "Compare the keystroke efficiency of various keyboard layouts.",
+  "main": "lib/index.js",
   "scripts": {
     "test": "find tests -name 'test_*.ts' -print0 | xargs -0 -I{} ts-node {} && echo 'Tests OK.'",
     "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test"
@@ -17,12 +17,9 @@
     "url": "https://github.com/peferron/keybench/issues"
   },
   "homepage": "https://github.com/peferron/keybench#readme",
-  "dependencies": {
-    "yargs": "^8.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^7.0.29",
-    "@types/yargs": "^6.6.0",
     "ts-node": "^3.0.6",
     "typescript": "^2.3.4"
   }

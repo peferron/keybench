@@ -1,15 +1,27 @@
-import * as fs from 'fs';
 import * as assert from 'assert';
 
-import parseLayout from '../src/layout';
-import countCharacters from '../src/text';
+import {Layout, CharacterInfo} from '../src/layout';
+import {Text} from '../src/text';
 import crunchStats from '../src/stats';
 
-const layout = parseLayout(fs.readFileSync('tests/inputs/layout.json', 'utf8'));
-const charCounts = countCharacters(fs.readFileSync('tests/inputs/sample.ts', 'utf8'));
-const stats = crunchStats(layout, charCounts);
+const layout: Layout = {
+    name: 'Test layout',
+    characterInfos: new Map<string, CharacterInfo>([
+        ['a', {modifiers: []}],
+        ['B', {modifiers: ['shift']}],
+    ]),
+};
+
+const text: Text = {
+    characterCounts: new Map<string, number>([
+        ['a', 7],
+        ['B', 13],
+    ])
+}
+const stats = crunchStats(layout, text);
 
 assert.deepStrictEqual(stats, {
-    characters: 1023,
-    keystrokes: 1180,
+    layout: 'Test layout',
+    characters: 20,
+    keystrokes: 33,
 });

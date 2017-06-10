@@ -2,12 +2,14 @@ import {Layout} from './layout';
 import {Text} from './text';
 
 export interface Stats {
+    layout: string;
     characters: number;
     keystrokes: number;
 }
 
 export default function crunch(layout: Layout, text: Text): Stats {
     const stats: Stats = {
+        layout: layout.name,
         characters: 0,
         keystrokes: 0,
     };
