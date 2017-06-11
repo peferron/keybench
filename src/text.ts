@@ -22,7 +22,8 @@ export default async function parseStreams(...streams: fs.ReadStream[]): Promise
     const text = new TextStream();
 
     for (const stream of streams) {
-        await new Promise(resolve => stream.pipe(text).once('finish', resolve));
+        const end = stream === streams[streams.length - 1];
+        await new Promise(resolve => stream.once('end', resolve).pipe(text, {end}));
     }
 
     return text;
