@@ -1,4 +1,3 @@
-import * as fs from 'fs';
 import * as stream from 'stream';
 
 export interface Text {
@@ -18,7 +17,7 @@ class TextStream extends stream.Writable implements Text {
     }
 }
 
-export default async function parseStreams(...streams: fs.ReadStream[]): Promise<Text> {
+export default async function parseStreams(streams: stream.Readable[]): Promise<Text> {
     const text = new TextStream();
 
     for (const stream of streams) {
