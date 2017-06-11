@@ -1,5 +1,3 @@
-import * as process from 'process';
-
 export interface Args {
     layoutPaths: string[];
     filePaths: string[];
@@ -7,35 +5,33 @@ export interface Args {
 }
 
 const HELP = `Usage:
-  $ keybench [layout...] [--] file...
+  keybench [layout...] [--] file...
 
 Options:
   -h, --help  Show help
 
 Examples:
-  Benchmark all built-in layouts against sample.scala and sample.go:
-  $ keybench sample.scala sample.go
+  # Benchmark all built-in layouts against sample.go and sample.scala
+  keybench sample.go sample.scala
 
-  Benchmark all built-in layouts plus mylayout1 and mylayout2
-  against sample.scala:
-  $ keybench mylayout1.json mylayout2.json -- sample.scala
+  # Benchmark all built-in layouts plus mylayout1 and mylayout2 against sample.go
+  keybench mylayout1.json mylayout2.json -- sample.go
 
-  Benchmark all built-in layouts against stdin:
-  $ keybench -`;
+  # Benchmark all built-in layouts against stdin
+  keybench -`;
 
-const askingForHelp = (arg: string) => /-h|--help/.test(arg);
+const isAskingForHelp = (arg: string) => /^(-h|--help)$/i.test(arg);
 
-export default function parseArgs(): Args {
-    const rawArgs = process.argv.slice(2);
+export default function parseArgs(argv: string[]): Args | string {
+    const rawArgs = argv.slice(2);
     const separatorIndex = rawArgs.indexOf('--');
-    const layoutPaths = rawArgs.slice(0, separatorIndex);
+    const layoutPaths = rawArgs.slice(0, Math.max(separatorIndex, 0));
     const rawFilePaths = rawArgs.slice(separatorIndex + 1);
     const filePaths = rawFilePaths.filter(path => path !== '-');
     const stdin = filePaths.length < rawFilePaths.length;
 
-    if (rawArgs.some(askingForHelp) || rawFilePaths.length === 0) {
-        console.log(HELP);
-        process.exit(2);
+    if (rawArgs.some(isAskingForHelp) || rawFilePaths.length === 0) {
+        return HELP;
     }
 
     return {layoutPaths, filePaths, stdin};

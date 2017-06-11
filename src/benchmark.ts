@@ -8,7 +8,6 @@ import crunchStats, {Stats} from './stats';
 
 export default async function benchmark(args: Args): Promise<Stats[]> {
     const layouts = args.layoutPaths.map(path => parseLayout(fs.readFileSync(path, 'utf8')));
-
     const fileStreams = args.filePaths.map(path => fs.createReadStream(path, 'utf8'));
 
     if (args.stdin) {
@@ -17,6 +16,5 @@ export default async function benchmark(args: Args): Promise<Stats[]> {
     }
 
     const text = await parseStreams(fileStreams);
-
     return layouts.map(layout => crunchStats(layout, text));
 }
