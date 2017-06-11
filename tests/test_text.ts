@@ -5,7 +5,7 @@ import parseStreams from '../src/text';
 import rethrow from '../src/async';
 
 rethrow(async () => {
-    const paths = ['tests/inputs/sample.ts', 'tests/inputs/sample.swift'];
+    const paths = ['tests/inputs/sample1.txt', 'tests/inputs/sample2.txt'];
     const text = await parseStreams(paths.map(path => fs.createReadStream(path, 'utf8')));
 
     assert.strictEqual(text.characterCounts.get('>'), 17);

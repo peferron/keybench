@@ -9,7 +9,7 @@ import rethrow from '../src/async';
 rethrow(async () => {
     const args: Args =  {
         layoutPaths: ['tests/inputs/layout.json'],
-        filePaths: ['tests/inputs/sample.ts', 'tests/inputs/sample.swift'],
+        filePaths: ['tests/inputs/sample1.txt', 'tests/inputs/sample2.txt'],
         stdin: false
     };
 
@@ -23,12 +23,12 @@ rethrow(async () => {
 rethrow(async () => {
     const args: Args =  {
         layoutPaths: ['tests/inputs/layout.json'],
-        filePaths: ['tests/inputs/sample.ts'],
+        filePaths: ['tests/inputs/sample1.txt'],
         stdin: true
     };
 
     const stdin: stream.Readable = process.stdin as any;
-    stdin.push(fs.readFileSync('tests/inputs/sample.swift', 'utf8'));
+    stdin.push(fs.readFileSync('tests/inputs/sample2.txt', 'utf8'));
     stdin.emit('end');
 
     assert.deepStrictEqual(await benchmark(args), [{
