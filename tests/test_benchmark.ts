@@ -6,6 +6,15 @@ import {Args} from '../src/args';
 import benchmark from '../src/benchmark';
 import rethrow from '../src/async';
 
+const EXPECTED = [{
+    layout: 'Test layout',
+    knownCharacterCount: 3856,
+    knownCharacterKeystrokes: 4236,
+    keystrokesPerCharacter: 4236 / 3856,
+    unknownCharacterCount: 51,
+    unknownCharacterSet: new Set(['j', 'w', 'O']),
+}];
+
 rethrow(async () => {
     const args: Args =  {
         layoutPaths: ['tests/inputs/layout.json'],
@@ -13,11 +22,7 @@ rethrow(async () => {
         stdin: false
     };
 
-    assert.deepStrictEqual(await benchmark(args), [{
-        layout: 'Test layout',
-        characters: 3907,
-        keystrokes: 4289,
-    }]);
+    assert.deepStrictEqual(await benchmark(args), EXPECTED);
 });
 
 rethrow(async () => {
@@ -31,9 +36,5 @@ rethrow(async () => {
     stdin.push(fs.readFileSync('tests/inputs/sample2.txt', 'utf8'));
     stdin.emit('end');
 
-    assert.deepStrictEqual(await benchmark(args), [{
-        layout: 'Test layout',
-        characters: 3907,
-        keystrokes: 4289,
-    }]);
+    assert.deepStrictEqual(await benchmark(args), EXPECTED);
 });

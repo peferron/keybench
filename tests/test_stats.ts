@@ -16,12 +16,17 @@ const text: Text = {
     characterCounts: new Map<string, number>([
         ['a', 7],
         ['B', 13],
+        ['c', 3],
+        ['d', 2],
     ])
 }
 const stats = crunchStats(layout, text);
 
 assert.deepStrictEqual(stats, {
     layout: 'Test layout',
-    characters: 20,
-    keystrokes: 33,
+    knownCharacterCount: 20,
+    knownCharacterKeystrokes: 33,
+    keystrokesPerCharacter: 33 / 20,
+    unknownCharacterCount: 5,
+    unknownCharacterSet: new Set(['c', 'd']),
 });
