@@ -11,7 +11,8 @@
     "lib": ["ES6", "ES2017.object"],
     "outDir": "dist",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "module": "commonjs"
   },
   "include": [
     "src/**/*"
