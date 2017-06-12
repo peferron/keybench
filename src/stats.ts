@@ -37,7 +37,7 @@ export default function crunch(layout: Layout, text: Text): Stats {
     };
 }
 
-export function prettify(stats: Stats): string {
+export function describe(stats: Stats): string {
   let s = stats.layout;
 
   s += `\n  - ${stats.unknownCharacterCount} characters cannot be typed`;

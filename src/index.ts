@@ -1,6 +1,6 @@
 import * as process from 'process';
 
-import {compare, prettify} from './stats';
+import {compare, describe} from './stats';
 import parseArgs from './args';
 import benchmark from './benchmark';
 import rethrow from './async';
@@ -15,8 +15,8 @@ async function main() {
     }
 
     const stats = await benchmark(args);
-    const prettified = stats.sort(compare).map(prettify);
-    const output = prettified.map((s, i) => `${i + 1}) ${s}`).join('\n\n');
+    const rankedDescriptions = stats.sort(compare).map((s, i) => `${i + 1}) ${describe(s)}`);
+    const output = rankedDescriptions.join('\n\n');
     console.log(output);
 }
 
