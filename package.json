@@ -2,10 +2,12 @@
   "name": "keybench",
   "version": "1.0.0",
   "description": "Compare the keystroke efficiency of various keyboard layouts.",
-  "main": "lib/index.js",
+  "main": "lib/benchmark.js",
+  "bin": "lib/cli.js",
   "scripts": {
     "test": "find tests -name 'test_*.ts' -print0 | xargs -0 -I{} ts-node {} && echo 'Tests OK.'",
-    "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test"
+    "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test",
+    "build": "rm -f lib/* && tsc"
   },
   "repository": {
     "type": "git",

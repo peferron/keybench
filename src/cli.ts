@@ -1,4 +1,5 @@
 import * as process from 'process';
+import * as path from 'path';
 
 import {compare, describe} from './stats';
 import parseArgs from './args';
@@ -6,7 +7,7 @@ import benchmark from './benchmark';
 import builtInLayoutPaths from './builtin';
 import rethrow from './async';
 
-const dedup = <T>(array: T[]) => [...new Set(array)];
+const dedupPaths = (paths: string[]) => [...new Set(paths.map(p => path.resolve(p)))];
 
 async function main() {
     const args = parseArgs(process.argv);
@@ -18,8 +19,8 @@ async function main() {
     }
 
     const stats = await benchmark(
-        dedup([...builtInLayoutPaths(), ...args.layoutPaths]),
-        dedup(args.filePaths),
+        dedupPaths([...builtInLayoutPaths(), ...args.layoutPaths]),
+        dedupPaths(args.filePaths),
         {stdin: args.stdin}
     );
 
