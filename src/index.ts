@@ -14,7 +14,7 @@ async function main() {
         return;
     }
 
-    const stats = await benchmark(args);
+    const stats = await benchmark(args.layoutPaths, args.filePaths, {stdin: args.stdin});
     const rankedDescriptions = stats.sort(compare).map((s, i) => `${i + 1}) ${describe(s)}`);
     const output = rankedDescriptions.join('\n\n');
     console.log(output);
