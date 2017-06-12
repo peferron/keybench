@@ -23,7 +23,7 @@ async function main() {
     const stats = await benchmark(
         dedupPaths([...builtInLayoutPaths(), ...args.layoutPaths]),
         dedupPaths(args.filePaths),
-        {stdin: args.stdin}
+        {stdin: args.stdin},
     );
 
     const rankedDescriptions = stats.sort(compare).map((s, i) => `${i + 1}) ${describe(s)}`);

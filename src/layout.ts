@@ -22,10 +22,12 @@ export default function parse(json: string): Layout {
         for (const char of output) {
             if (characterInfos.has(char)) {
                 const otherInfo = characterInfos.get(char);
-                throw new Error(`Character "${char}" should be present only once per layout, ` +
-                    `but is present ` + (info === otherInfo
+                throw new Error(
+                    `Character "${char}" should be present only once per layout, but is present ` +
+                    (info === otherInfo
                         ? `multiple times with ${inspect(info)}.`
-                        : `both with ${inspect(otherInfo)} and with ${inspect(info)}.`));
+                        : `both with ${inspect(otherInfo)} and with ${inspect(info)}.`)
+                );
             }
 
             characterInfos.set(char, info);
