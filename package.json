@@ -1,6 +1,6 @@
 {
   "name": "keybench",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Compare the keystroke efficiency of keyboard layouts.",
   "bin": "dist/cli.js",
   "files": [
