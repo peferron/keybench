@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as process from 'process';
 import * as path from 'path';
 

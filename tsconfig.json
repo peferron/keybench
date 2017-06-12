@@ -9,8 +9,9 @@
     "forceConsistentCasingInFileNames": true,
     "target": "ES6",
     "lib": ["ES6", "ES2017.object"],
-    "outDir": "lib",
-    "sourceMap": true
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true
   },
   "include": [
     "src/**/*"
