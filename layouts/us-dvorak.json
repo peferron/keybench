@@ -1,0 +1,13 @@
+{
+    "name": "United States Dvorak",
+    "keys": [
+        {
+            "modifiers": [],
+            "output": "`1234567890[]\t',.pyfgcrl/=\\aoeuidhtns-\n;qjkxbmwvz "
+        },
+        {
+            "modifiers": ["shift"],
+            "output": "~!@#$%^&*(){}\"<>PYFGCRL?+|AOEUIDHTNS_:QJKXBMWVZ"
+        }
+    ]
+}
