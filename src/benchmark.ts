@@ -10,7 +10,14 @@ export default async function benchmark(
     filePaths: string[],
     {stdin = false} = {},
 ): Promise<Stats[]> {
-    const layouts = layoutPaths.map(path => parseLayout(fs.readFileSync(path, 'utf8')));
+    const layouts = layoutPaths.map(path => {
+        try {
+            return parseLayout(fs.readFileSync(path, 'utf8'));
+        } catch (e) {
+            throw new Error(`Error parsing layout ${path}: ${e}`);
+        }
+    });
+
     const fileStreams = filePaths.map(path => fs.createReadStream(path, 'utf8'));
 
     if (stdin) {
