@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as process from 'process';
 
 import parseLayout from './layout';
-import parseStreams from './text';
 import crunchStats, {Stats} from './stats';
+import parseStreams from './text';
 
 export default async function benchmark(
     layoutPaths: string[],

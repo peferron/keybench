@@ -1,5 +1,5 @@
-import * as path from 'path';
 import * as fs from 'fs';
+import * as path from 'path';
 
 export default function builtInLayoutPaths(): string[] {
     const dir = path.join(__dirname, '../layouts');

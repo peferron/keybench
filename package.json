@@ -12,7 +12,8 @@
     "test": "find tests -name 'test_*.ts' -print0 | xargs -0 -I{} ts-node {} && echo 'Tests OK.'",
     "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test",
     "build": "rm -f dist/* && tsc",
-    "prepublish": "npm run test && npm run build"
+    "lint": "tslint -c tslint.json src/**/*.ts && echo 'Lint OK.'",
+    "prepublish": "npm run test && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@types/node": "^7.0.29",
     "ts-node": "^3.0.6",
+    "tslint": "^5.4.3",
     "typescript": "^2.3.4"
   }
 }

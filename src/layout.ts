@@ -26,8 +26,7 @@ export default function parse(json: string): Layout {
                     `Character "${char}" should be present only once per layout, but is present ` +
                     (info === otherInfo
                         ? `multiple times with ${inspect(info)}.`
-                        : `both with ${inspect(otherInfo)} and with ${inspect(info)}.`)
-                );
+                        : `both with ${inspect(otherInfo)} and with ${inspect(info)}.`));
             }
 
             characterInfos.set(char, info);

@@ -7,7 +7,7 @@ export interface Text {
 class TextStream extends stream.Writable implements Text {
     characterCounts = new Map<string, number>();
 
-    _write(chunk: any, _encoding: string, next: Function): void {
+    _write(chunk: any, _encoding: string, next: () => void): void {
         for (const char of chunk.toString()) {
             const count = this.characterCounts.get(char) || 0;
             this.characterCounts.set(char, count + 1);

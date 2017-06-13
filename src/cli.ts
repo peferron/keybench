@@ -1,21 +1,23 @@
 #!/usr/bin/env node
 
-import * as process from 'process';
 import * as path from 'path';
+import * as process from 'process';
 
-import {compare, describe} from './stats';
 import parseArgs from './args';
+import rethrow from './async';
 import benchmark from './benchmark';
 import builtInLayoutPaths from './builtin';
-import rethrow from './async';
+import {compare, describe} from './stats';
 
 const dedupPaths = (paths: string[]) => [...new Set(paths.map(p => path.resolve(p)))];
+
+const println = (str: string) => process.stdout.write(str + '\n');
 
 async function main() {
     const args = parseArgs(process.argv);
 
     if (typeof args === 'string') {
-        console.log(args);
+        println(args);
         (process as NodeJS.Process).exitCode = 2;
         return;
     }
@@ -28,7 +30,7 @@ async function main() {
 
     const rankedDescriptions = stats.sort(compare).map((s, i) => `${i + 1}) ${describe(s)}`);
     const output = rankedDescriptions.join('\n\n');
-    console.log(output);
+    println(output);
 }
 
 rethrow(main);
