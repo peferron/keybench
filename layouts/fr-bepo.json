@@ -1,0 +1,17 @@
+{
+    "name": "French BÉPO",
+    "keys": [
+        {
+            "modifiers": [],
+            "output": "$\"«»()@+-/*=%\tbépoèvdljzwauie,ctsrnmç\nêàyx.k'qghf "
+        },
+        {
+            "modifiers": ["shift"],
+            "output": "#1234567890°`BÉPOÈ!VDLJZWAUIE;CTSRNMÇÊÀYX:K?QGHF "
+        },
+        {
+            "modifiers": ["altgr"],
+            "output": "–—<>[]^|&œæù€’\\{}…~_"
+        }
+    ]
+}
