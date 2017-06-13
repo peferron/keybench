@@ -3,7 +3,7 @@
     "keys": [
         {
             "modifiers": [],
-            "output": "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./ \n\t"
+            "output": "`1234567890-=\tqwertyuiop[]\\asdfghjkl;'\nzxcvbnm,./ "
         },
         {
             "modifiers": ["shift"],
