@@ -11,7 +11,8 @@
   "scripts": {
     "test": "find tests -name 'test_*.ts' -print0 | xargs -0 -I{} ts-node {} && echo 'Tests OK.'",
     "watch": "rerun -bcx --pattern '**/*.{ts,json}' -- npm test",
-    "build": "rm -f dist/* && tsc"
+    "build": "rm -f dist/* && tsc",
+    "prepublish": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
